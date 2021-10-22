@@ -1,0 +1,12 @@
+.site-footer {
+    border-top: 16px solid $textColor;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.footer-content-container {
+    max-width: $footerMaxWidth;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
+}

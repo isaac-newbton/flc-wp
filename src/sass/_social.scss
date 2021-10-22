@@ -1,0 +1,30 @@
+.social-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+
+    li {
+        font-size: 2rem;
+        line-height: 1;
+        margin: 0;
+
+        &:not(:last-child) {
+            margin-inline-end: 0.5ch;
+        }
+    }
+
+    a {
+        color: $textColor;
+        transition: color 150ms;
+
+        &:focus-visible {
+            outline: 2px dotted $primaryAccentColor;
+        }
+
+        &:focus, &:hover {
+            color: $primaryAccentColor;
+        }
+    }
+}

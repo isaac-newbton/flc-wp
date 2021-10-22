@@ -1,0 +1,31 @@
+$xsmall: 540px;
+$small: 720px;
+$medium: 900px;
+$large: 1080px;
+$xlarge: 1280px;
+
+$logoWidth: 332px;
+$logoHeight: 66px;
+
+$sidebarWidth: 40rem;
+$sidebarBreak: $large;
+
+$contentMaxWidth: calc(160rem + $sidebarWidth);
+$navMaxWidth: $contentMaxWidth;
+$footerMaxWidth: $contentMaxWidth;
+
+$logoGreen: #83c631;
+$logoBlack: #002515;
+
+$backgroundColor: #fdfae6;
+$textColor: $logoBlack;
+
+$alternateBackgroundColor: #d5ddbb;
+$secondaryNavBackgroundColor: $logoGreen;
+$inputFieldBackgroundColor: #81a161;
+$primaryAccentColor: #5d873b;
+$secondaryAccentColor: #f49734;
+
+
+$bodyFontFamily: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$headingFontFamily: 'Cooper Black', 'Cooper', 'Cooper Std', 'Corben', serif;

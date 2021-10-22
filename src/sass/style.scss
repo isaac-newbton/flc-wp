@@ -1,0 +1,21 @@
+/*!
+Theme Name: Friends Life Care
+Author: Allebach Communications
+Author URI: https://www.allebach.com/
+Description: Custom WordPress theme for Friends Life Care. Developed in 2021.
+Requires at least: 5.3
+Tested up to: 5.8
+Requires PHP: 7.3
+Version: 0.0.1
+*/
+
+@import "./fonts";
+@import "./vars";
+@import "./reset";
+@import "./base";
+@import "./screen-reader";
+@import "./main";
+@import "./footer";
+@import "./social";
+@import "./sidebar";
+@import "./home";

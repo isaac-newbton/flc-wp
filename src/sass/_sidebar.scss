@@ -1,0 +1,130 @@
+.sidebar .wp-block-group {
+    position: relative;
+
+    border: calc(3rem - 2px) solid $backgroundColor;
+    background-color: $alternateBackgroundColor;
+    padding: 3rem;
+
+    &::before {
+        content: " ";
+        position: absolute;
+        z-index: -1;
+        top: -3rem;
+        left: -3rem;
+        right: -3rem;
+        bottom: -3rem;
+        border: 2px solid $textColor;
+    }
+}
+
+.sidebar .widget_block {
+    margin-bottom: 3rem;
+
+    h2 {
+        font-size: 200%;
+        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    h2 + p {
+        margin-top: 0.5rem;
+    }
+
+    &:nth-child(2n + 1) .wp-block-group {
+        background-color: $primaryAccentColor;
+        border: none;
+        padding-bottom: 0;
+        color: $backgroundColor;
+
+        h1, h2, h3, h4, h5, h6 {
+            color: $backgroundColor;
+        }
+
+        strong, b {
+            color: $textColor;
+        }
+
+        &::before {
+            display: none;
+        }
+    }
+
+    input:not([type="submit"]), select {
+        background-color: $inputFieldBackgroundColor;
+        border: 2px solid $inputFieldBackgroundColor;
+        outline: none;
+        color: $backgroundColor;
+
+        &:focus {
+            border-color: $textColor;
+        }
+    }
+}
+
+.sidebar .wp-block-image {
+    font-size: 0;
+
+    &:last-child {
+        margin-top: 2rem;
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.sidebar .wp-block-buttons {
+    justify-content: center;
+}
+
+.sidebar .wp-block-button__link, .sidebar input[type="submit"] {
+    background-color: $secondaryAccentColor;
+    border-radius: 0.5ch;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+
+    &:focus, &:hover {
+        background-color: darken($secondaryAccentColor, 10%);
+    }
+
+    &:focus-visible {
+        outline: 2px dotted $secondaryAccentColor;
+    }
+}
+
+.sidebar input[type="submit"] {
+    font-family: inherit;
+    box-shadow: none;
+    cursor: pointer;
+    display: block;
+    font-size: 1.125em;
+    padding: calc(0.667em + 2px) calc(1.333em + 2px);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+}
+
+.wp-block-group__inner-container {
+
+    h1, h2, h3, h4, h5, h6,
+    p,
+    form {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 30rem;
+    }
+}
+
+.sidebar {
+    overflow-x: hidden;
+    padding: 2rem;
+}

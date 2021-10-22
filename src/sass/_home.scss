@@ -1,0 +1,175 @@
+.home-content-container {
+    max-width: calc($contentMaxWidth - 60rem);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    + .home-content-container {
+        margin-top: 4rem;
+    }
+}
+
+.home-banner-wrapper {
+    min-height: calc(100vh - 4rem);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.home-banner-container {
+    display: flex;
+    align-items: center;
+    padding: 3rem;
+}
+
+.home-banner-content {
+    background-image: url(./images/ellipses.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: min(10rem, calc(4rem + 4vw));
+    margin-top: 12vh;
+
+    h1 {
+        font-size: min(6rem, calc(2.1rem + 2vw));
+        margin-bottom: 0;
+    }
+
+    p {
+        font-size: min(2.4rem, calc(1.4rem + 1vw));
+        margin-top: 0;
+    }
+}
+
+.home-post-content-container {
+    max-width: calc($contentMaxWidth - 80rem);
+    border-bottom: 1px solid $textColor;
+    padding-bottom: 2rem;
+    text-align: center;
+    font-size: 2.4rem;
+}
+
+.home-callouts-container > h2 {
+    font-size: min(6rem, calc(2rem + 3vw));
+    text-align: center;
+    margin-top: 6rem;
+}
+
+.home-callout-boxes {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    font-size: 0;
+
+    h2, h3, h4, h5, h6 {
+        color: $primaryAccentColor;
+        font-size: min(4.5rem, 2.1rem + 2vw);
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 1.5em;
+    }
+
+    li {
+        font-size: min(2rem, calc(1.2rem + 1vw));
+        flex: 0 1 40rem;
+        position: relative;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+
+        border: calc(3rem - 2px) solid $backgroundColor;
+        background-color: $alternateBackgroundColor;
+        padding: 3rem;
+        margin: 2rem;
+
+        &::before {
+            content: " ";
+            position: absolute;
+            z-index: -1;
+            top: -3rem;
+            left: -3rem;
+            right: -3rem;
+            bottom: -3rem;
+            border: 2px solid $textColor;
+        }
+
+        &:nth-child(2n) {
+            background-color: $primaryAccentColor;
+            background-image: url(./images/green-ellipses-bg.png);
+            background-size: cover;
+            background-position: top left;
+            background-repeat: no-repeat;
+            color: $backgroundColor;
+
+            h2, h3, h4, h5, h6 {
+                color: $backgroundColor;
+            }
+        }
+    }
+
+    .callout-button {
+        font-size: 1.8rem;
+    }
+}
+
+.home-after-content-ctas {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+
+    li {
+        font-size: min(2rem, calc(1.2rem + 1vw));
+        flex: 0 1 30rem;
+        position: relative;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        padding: 2rem;
+    }
+
+    .cta-icon {
+        text-align: center;
+        font-size: 0;
+
+        img {
+            display: inline-block;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    .cta-content {
+        text-align: center;
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+
+    .cta-button {
+        justify-self: flex-end;
+        text-align: center;
+        line-height: 0.875;
+
+        .link-button {
+            display: flex;
+            height: 2em;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 0.5ch;
+            padding-bottom: 0.5ch;
+            max-width: 15ch;
+            font-size: 2rem;
+        }
+    }
+}
