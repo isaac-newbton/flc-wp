@@ -1,1 +1,1 @@
-console.log("menu script");
+document.addEventListener("DOMContentLoaded",function(){const r=document.querySelector("#primary-mobile-menu"),n=document.querySelector(`#${r.getAttribute("aria-controls")}`);r.addEventListener("click",function(e){var t=r.getAttribute("aria-expanded");console.log(t),r.setAttribute("aria-expanded","true"==t?"false":"true"),n.setAttribute("aria-expanded","true"==t?"false":"true")})});

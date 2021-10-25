@@ -11,7 +11,7 @@
 }
 
 .home-banner-wrapper {
-    min-height: calc(100vh - 4rem);
+    min-height: calc(100vh - 5rem);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -48,6 +48,11 @@
     padding-bottom: 2rem;
     text-align: center;
     font-size: 2.4rem;
+
+    .leaf-divider {
+        margin-left: -2rem;
+        margin-right: -2rem;
+    }
 }
 
 .home-callouts-container > h2 {
@@ -67,7 +72,7 @@
 
     h2, h3, h4, h5, h6 {
         color: $primaryAccentColor;
-        font-size: min(4.5rem, 2.1rem + 2vw);
+        font-size: min(4.5rem, calc(1.9rem + 2vw));
         margin-bottom: 0;
         margin-top: 0;
     }
@@ -171,5 +176,255 @@
             max-width: 15ch;
             font-size: 2rem;
         }
+    }
+}
+
+.home-double-cta-container {
+    background-color: $primaryAccentColor;
+    color: $backgroundColor;
+    margin-top: 8rem;
+    margin-bottom: 0;
+    padding: 2rem 0;
+    overflow: hidden;
+
+    @media(min-width: $xlarge) {
+        padding: 8rem 0;
+    }
+
+    > .home-content-container {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0 2rem;
+        display: flex;
+        flex-flow: column nowrap;
+        max-width: $medium;
+
+        @media(min-width: $xlarge) {
+            flex-direction: row;
+        }
+    }
+
+    h2 {
+        color: inherit;
+
+        small {
+            color: $textColor;
+        }
+    }
+}
+
+.home-double-cta-section {
+    position: relative;
+    flex: 1 1 50%;
+
+    > *:not(.background) {
+        position: relative;
+        z-index: 2;
+    }
+
+    h2 {
+        margin-top: 1rem;
+    }
+
+    .background {
+        position: absolute;
+        width: auto;
+        height: auto;
+        z-index: 1;
+        display: block;
+        max-width: 380px;
+        height: auto;
+    }
+
+    &:nth-child(1) {
+        border-bottom: 2px solid $textColor;
+
+        .background {
+            top: -2rem;
+            right: calc(50% + 15vw);
+
+            @media(min-width: $xlarge) {
+                top: -8rem;
+            }
+        }
+
+        @media(min-width: $xlarge) {
+            border-bottom: none;
+            border-right: 2px solid $textColor;
+        }
+
+        .home-double-cta-section-content-container {
+            margin-left: auto;
+        }
+    }
+
+    &:nth-child(2) {
+
+        .background {
+            bottom: -2rem;
+            left: calc(30% + 15vw);
+            max-width: 440px;
+
+            @media(min-width: $xlarge) {
+                bottom: -8rem;
+            }
+        }
+
+        .home-double-cta-section-content-container {
+            margin-right: auto;
+        }
+    }
+}
+
+.home-double-cta-section-content-container {
+    max-width: min(80%, calc(50% + 10vw));
+    padding: 3rem 2rem 5rem;
+}
+
+.home-double-cta-section-content {
+    font-size: min(2.2rem, calc(1.2rem + 1.5vw));
+    margin-bottom: 3rem;
+}
+
+.home-bottom-content-blocks-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    max-width: calc($contentMaxWidth - 30rem);
+    margin-top: 4rem;
+}
+
+.home-bottom-block {
+    flex: 0 1 45rem;
+    position: relative;
+
+    border: calc(2rem - 2px) solid $backgroundColor;
+    background-color: $alternateBackgroundColor;
+    padding: 2rem 2rem 0;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+
+    &::before {
+        content: " ";
+        position: absolute;
+        z-index: -1;
+        top: -2rem;
+        left: -2rem;
+        right: -2rem;
+        bottom: -2rem;
+        border: 2px solid $textColor;
+    }
+
+    &:nth-child(2n) {
+        background-color: $primaryAccentColor;
+        color: $backgroundColor;
+
+        h1, h2, h3, h4, h5, h6 {
+            color: $backgroundColor;
+        }
+
+        strong, b {
+            color: $textColor;
+        }
+    }
+
+    h1, h2 {
+        font-size: min(3.8rem, calc(1.5rem + 3vw));
+        max-width: 15ch;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.home-bottom-block {
+
+    p, h2 {
+        text-align: center;
+    }
+
+    .callout-button {
+        text-align: center;
+    }
+
+    input:not([type="submit"]), select {
+        background-color: $inputFieldBackgroundColor;
+        border: 2px solid $inputFieldBackgroundColor;
+        outline: none;
+        color: $backgroundColor;
+
+        &:focus {
+            border-color: $textColor;
+        }
+    }
+
+    input[type="submit"] {
+        background-color: $secondaryAccentColor;
+        border-radius: 0.5ch;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: white;
+        font-family: inherit;
+        box-shadow: none;
+        cursor: pointer;
+        display: block;
+        font-size: 1.125em;
+        padding: calc(0.667em + 2px) calc(1.333em + 2px);
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        border: none;
+
+        &:focus, &:hover {
+            background-color: darken($secondaryAccentColor, 10%);
+        }
+
+        &:focus-visible {
+            outline: 2px dotted $secondaryAccentColor;
+        }
+    }
+}
+
+.home-resources {
+    list-style: none;
+    margin: 3rem -2rem 0;
+    padding: 0;
+    font-size: 0;
+
+    li {
+        display: flex;
+        flex-flow: row nowrap;
+        margin: 2rem 0 0;
+        padding: 0;
+        align-content: center;
+    }
+}
+
+.resource-image-container {
+    
+    img {
+        display: block;
+        width: min(190px, 25vw);
+        height: auto;
+    }
+}
+
+.resource-content-container {
+    font-size: 1.5rem;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    h2, h3, h4, h5, h6 {
+        margin-bottom: 1rem;
+        margin-top: 0.5rem;
+        font-size: min(2.5rem, calc(1rem + 1.6vw));
+    }
+
+    .link-button {
+        padding: 0.5em 1em;
+        margin: 0;
     }
 }

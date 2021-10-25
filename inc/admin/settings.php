@@ -16,12 +16,10 @@ function aca_theme_custom_settings(){
     register_setting('aca-settings', 'aca_youtube_profile_url', 'sanitize_social_url');
     register_setting('aca-settings', 'aca_linkedin_profile_url', 'sanitize_social_url');
     register_setting('aca-settings', 'aca_instagram_profile_url', 'sanitize_social_url');
-    register_setting('aca-settings', 'aca_footer_copyright');
 
     add_settings_section('aca-theme-settings', 'Theme Settings', 'aca_theme_options', 'aca_flc');
 
     add_settings_field('aca-footer-logo', 'Footer Logo', 'aca_footer_logo', 'aca_flc', 'aca-theme-settings');
-    add_settings_field('aca-footer-copyright', 'Footer Copyright', 'aca_footer_copyright', 'aca_flc', 'aca-theme-settings');
     add_settings_field('aca-contact-url', 'Contact URL', 'aca_contact_url', 'aca_flc', 'aca-theme-settings');
     add_settings_field('aca-social-fb', 'Facebook URL', 'aca_facebook_url', 'aca_flc', 'aca-theme-settings');
     add_settings_field('aca-social-li', 'Linkedin URL', 'aca_linkedin_url', 'aca_flc', 'aca-theme-settings');
@@ -57,11 +55,6 @@ function aca_linkedin_url(){
 function aca_instagram_url(){
     $value = esc_attr(get_option('aca_instagram_profile_url'));
     echo '<input type="text" name="aca_instagram_profile_url" class="regular-text" value="'.$value.'" />';
-}
-
-function aca_footer_copyright(){
-    $value = esc_attr(get_option('aca_footer_copyright'));
-    echo '<span>&copy;' . date('Y') . ' </span><input type="text" name="aca_footer_copyright" class="regular-text" value="'.$value.'" />';
 }
 
 function sanitize_social_url($url){

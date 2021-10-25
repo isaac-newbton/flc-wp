@@ -67,6 +67,15 @@ function aca_register_sidebars() {
         'before_title' => '<h3 class="widget-title">',
         'after_title' => '</h3>',
     ]);
+    register_sidebar([
+        'id' => 'footer',
+        'name' => __('Footer Content'),
+        'description' => __('The footer widget. Appears after the footer logo and menu.'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ]);
 }
 
 require_once get_template_directory() . '/inc/admin/admin.php';

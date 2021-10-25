@@ -51,6 +51,14 @@ $home_end_blocks = get_field('home_end_blocks');
     </ul>
 </div>
 
+<div class="home-double-cta-container">
+    <?php get_template_part('template-parts/home/home-double-cta-section'); ?>
+</div>
+
+<div class="home-bottom-content-blocks-container home-content-container">
+    <?php get_template_part('template-parts/home/home-bottom-blocks'); ?>
+</div>
+
 <?php
 
 get_footer();

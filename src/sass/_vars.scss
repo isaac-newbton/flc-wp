@@ -11,8 +11,9 @@ $sidebarWidth: 40rem;
 $sidebarBreak: $large;
 
 $contentMaxWidth: calc(160rem + $sidebarWidth);
-$navMaxWidth: $contentMaxWidth;
-$footerMaxWidth: $contentMaxWidth;
+$navMaxWidth: calc($contentMaxWidth - 20rem);
+$navBreak: $xlarge;
+$footerMaxWidth: calc($contentMaxWidth - 60rem);
 
 $logoGreen: #83c631;
 $logoBlack: #002515;
