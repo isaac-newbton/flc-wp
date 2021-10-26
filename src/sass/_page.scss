@@ -1,0 +1,30 @@
+.page-banner-wrapper {
+    min-height: min(75vh, calc(25vh + 20vw));
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
+    box-sizing: border-box;
+    padding-top: 20vh;
+}
+
+.page-banner-container {
+    padding: 3rem 3rem 0;
+}
+
+.page-banner-content {
+    padding: 0;
+    background: $backgroundColor;
+    border-radius: 1rem 1rem 0 0;
+    box-sizing: border-box;
+    width: fit-content;
+    max-width: calc($contentMaxWidth - $sidebarWidth);
+
+    h1 {
+        font-size: min(6rem, calc(1.8rem + 2.4vw));
+        padding: 1ch 1ch 0;
+        margin: 0;
+        display: inline-block;
+    }
+}
