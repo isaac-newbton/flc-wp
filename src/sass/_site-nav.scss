@@ -85,7 +85,7 @@
     position: fixed;
     width: 100%;
     max-width: 50rem;
-    height: calc(100vh - 15rem);
+    max-height: calc(100vh - 15rem);
     min-height: 50rem;
     right: -100%;
     background-color: $primaryAccentColor;
@@ -138,6 +138,18 @@
         }
     }
 
+    .sub-menu {
+        display: none;
+    }
+
+    li.menu-item-has-children {
+        position: relative;
+    }
+
+    li.menu-item-has-children:hover > .sub-menu {
+        display: block;
+    }
+
     &[aria-expanded="true"] {
         right: 0;
         z-index: 10;
@@ -165,10 +177,15 @@
         position: absolute;
         content: '\25B6';
         color: $textColor;
-        top: 50%;
+        top: 1.33em;
         transform: translateY(-50%);
         right: 1rem;
         font-size: 75%;
+        transition: 150ms transform ease-in-out;
+    }
+
+    &:hover::after {
+        transform: translateY(-50%) rotateZ(90deg);
     }
 }
 
@@ -323,6 +340,10 @@
                     li:hover, li:focus-within {
                         background-color: rgba(0, 0, 0, 0.25);
                         transition: 150ms background-color ease-in-out;
+
+                        &::after {
+                            transform: translateY(-50%) rotateZ(0deg);
+                        }
                     }
                 }
 
