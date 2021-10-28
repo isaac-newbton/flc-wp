@@ -10,10 +10,6 @@ h1, h2, h3, h4, h5, h6 {
     color: $primaryAccentColor;
 }
 
-#content {
-    margin-top: 5rem;
-}
-
 .content-container {
     width: 100%;
     max-width: $contentMaxWidth;
@@ -23,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .content-sidebar-container {
-    max-width: $contentMaxWidth;
+    max-width: calc($contentMaxWidth - $sidebarWidth);
     margin-left: auto;
     margin-right: auto;
 

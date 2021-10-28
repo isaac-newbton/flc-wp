@@ -7,24 +7,39 @@
     align-items: flex-end;
     box-sizing: border-box;
     padding-top: 20vh;
+
+    .content-container {
+        max-width: calc($contentMaxWidth - $sidebarWidth);
+    }
 }
 
 .page-banner-container {
-    padding: 3rem 3rem 0;
+    padding: 3rem 2rem 0;
 }
 
 .page-banner-content {
-    padding: 0;
-    background: $backgroundColor;
+    padding: 0 0 1rem;
+    background: transparent;
     border-radius: 1rem 1rem 0 0;
     box-sizing: border-box;
     width: fit-content;
     max-width: calc($contentMaxWidth - $sidebarWidth);
 
     h1 {
-        font-size: min(6rem, calc(1.8rem + 2.4vw));
-        padding: 1ch 1ch 0;
+        font-size: min(5rem, calc(1.5rem + 3vw));
+        padding: 0;
         margin: 0;
         display: inline-block;
+        color: white;
+        text-shadow:
+            0 2px 4px $primaryAccentColor,
+            0 0 2px $primaryAccentColor,
+            0 0 3px $primaryAccentColor,
+            0 0 4px $primaryAccentColor;
     }
+}
+
+.page-title {
+    color: $primaryAccentColor;
+    margin-top: 0;
 }

@@ -15,12 +15,18 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
 }
 
 .home-banner-container {
     display: flex;
     align-items: center;
-    padding: 3rem;
+    padding: 0 1rem 75vh;
+
+    @media(min-width: $large) {
+        padding-bottom: 3rem;
+    }
 }
 
 .home-banner-content {
@@ -28,17 +34,25 @@
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    padding: min(10rem, calc(4rem + 4vw));
-    margin-top: 12vh;
+    padding: min(4rem, calc(4rem + 4vw)) min(8rem, calc(4rem + 4vw));
+    width: 100%;
+    max-width: 600px;
+    min-height: 600px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
 
     h1 {
-        font-size: min(6rem, calc(2.1rem + 2vw));
+        font-size: min(6.4rem, calc(0.5rem + 8vw));
         margin-bottom: 0;
+        margin-top: 0;
     }
 
     p {
-        font-size: min(2.4rem, calc(1.4rem + 1vw));
+        font-size: min(3rem, calc(1rem + 2vw));
         margin-top: 0;
+        margin-bottom: 0;
     }
 }
 
@@ -72,8 +86,8 @@
 
     h2, h3, h4, h5, h6 {
         color: $primaryAccentColor;
-        font-size: min(4.5rem, calc(1.9rem + 2vw));
-        margin-bottom: 0;
+        font-size: min(6rem, calc(0.75rem + 4.5vw));
+        margin-bottom: 1rem;
         margin-top: 0;
     }
 
@@ -83,17 +97,22 @@
     }
 
     li {
-        font-size: min(2rem, calc(1.2rem + 1vw));
-        flex: 0 1 40rem;
+        font-size: min(3rem, calc(0.75rem + 3vw));
+        flex: 0 1 50rem;
         position: relative;
         display: flex;
         flex-flow: column nowrap;
         justify-content: space-between;
+        min-height: 50rem;
 
         border: calc(3rem - 2px) solid $backgroundColor;
         background-color: $alternateBackgroundColor;
-        padding: 3rem;
+        padding: min(3rem, calc(0.5rem + 2vw));
         margin: 2rem;
+
+        @media (max-width: 560px) {
+            min-height: calc(100vw - 16rem);
+        }
 
         &::before {
             content: " ";
@@ -121,7 +140,7 @@
     }
 
     .callout-button {
-        font-size: 1.8rem;
+        font-size: min(2rem, calc(1.1rem + 1vw));
     }
 }
 
@@ -184,7 +203,7 @@
     color: $backgroundColor;
     margin-top: 8rem;
     margin-bottom: 0;
-    padding: 2rem 0;
+    padding: 0;
     overflow: hidden;
 
     @media(min-width: $xlarge) {
@@ -216,6 +235,8 @@
 .home-double-cta-section {
     position: relative;
     flex: 1 1 50%;
+    display: flex;
+    flex-flow: column nowrap;
 
     > *:not(.background) {
         position: relative;
@@ -227,58 +248,91 @@
     }
 
     .background {
-        position: absolute;
-        width: auto;
-        height: auto;
-        z-index: 1;
-        display: block;
+        width: 100%;
         max-width: 380px;
-        height: auto;
-    }
-
-    &:nth-child(1) {
-        border-bottom: 2px solid $textColor;
-
-        .background {
-            top: -2rem;
-            right: calc(50% + 15vw);
-
-            @media(min-width: $xlarge) {
-                top: -8rem;
-            }
-        }
-
-        @media(min-width: $xlarge) {
-            border-bottom: none;
-            border-right: 2px solid $textColor;
-        }
-
-        .home-double-cta-section-content-container {
-            margin-left: auto;
-        }
+        margin: 0 auto 2rem;
     }
 
     &:nth-child(2) {
+        flex-direction: column-reverse;
+        border-top: 2px solid $textColor;
+        margin-top: 6rem;
 
         .background {
-            bottom: -2rem;
-            left: calc(30% + 15vw);
-            max-width: 440px;
+            margin: 2rem auto 0;
+        }
+    }
+
+    @media(min-width: $xlarge) {
+
+        .background {
+            position: absolute;
+            width: auto;
+            height: auto;
+            z-index: 1;
+            display: block;
+            height: auto;
+            margin: unset;
+        }
+
+        &:nth-child(1) {
+            border-bottom: 2px solid $textColor;
+
+            .background {
+                top: -2rem;
+                right: calc(75% + 1vw);
+
+                @media(min-width: $xlarge) {
+                    top: -8rem;
+                }
+            }
 
             @media(min-width: $xlarge) {
-                bottom: -8rem;
+                border-bottom: none;
+                border-right: 2px solid $textColor;
+            }
+
+            .home-double-cta-section-content-container {
+                margin-left: auto;
             }
         }
 
-        .home-double-cta-section-content-container {
-            margin-right: auto;
+        &:nth-child(2) {
+            flex-direction: column;
+            border-top: none;
+            margin-top: unset;
+            margin-left: 4rem;
+
+            .background {
+                bottom: -2rem;
+                left: calc(35% + 1vw);
+                max-width: 440px;
+
+                @media(min-width: $xlarge) {
+                    bottom: -8rem;
+                }
+            }
+
+            .home-double-cta-section-content-container {
+                margin-right: auto;
+            }
         }
     }
 }
 
 .home-double-cta-section-content-container {
-    max-width: min(80%, calc(50% + 10vw));
-    padding: 3rem 2rem 5rem;
+    padding: 0rem 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    @media(min-width: $xlarge) {
+        max-width: min(80%, calc(50% + 10vw));
+        padding: 3rem 2rem 5rem;
+        margin-left: unset;
+        margin-right: unset;
+        text-align: left;
+    }
 }
 
 .home-double-cta-section-content {

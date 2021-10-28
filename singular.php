@@ -21,6 +21,9 @@ $hide_banner = get_field('_hide_banner');
 
 <div class="content-sidebar-container">
 	<div class="content-container">
+        <?php if(!$banner || $hide_banner): ?>
+            <h1 class="page-title"><?=get_the_title()?></h1>
+        <?php endif; ?>
 		<?php
 			the_content();
 		?>
