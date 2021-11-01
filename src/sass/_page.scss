@@ -8,17 +8,33 @@
     box-sizing: border-box;
     padding-top: 20vh;
 
+    @media(min-width: $large) {
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+        align-items: center;
+    }
+
     .content-container {
         max-width: calc($contentMaxWidth - $sidebarWidth);
+        background-color: $backgroundColor;
+
+        @media(min-width: $large) {
+            background-color: transparent;
+        }
     }
 }
 
 .page-banner-container {
-    padding: 3rem 2rem 0;
+    padding: 2rem 2rem 0;
+
+    @media(min-width: $large) {
+        padding: 2rem;
+        width: 40%;
+    }
 }
 
 .page-banner-content {
-    padding: 0 0 1rem;
+    padding: 0;
     background: transparent;
     border-radius: 1rem 1rem 0 0;
     box-sizing: border-box;
@@ -26,16 +42,20 @@
     max-width: calc($contentMaxWidth - $sidebarWidth);
 
     h1 {
-        font-size: min(5rem, calc(1.5rem + 3vw));
+        font-size: min(6.2rem, calc(1.5rem + 2.5vw));
         padding: 0;
         margin: 0;
         display: inline-block;
-        color: white;
-        text-shadow:
-            0 2px 4px $primaryAccentColor,
-            0 0 2px $primaryAccentColor,
-            0 0 3px $primaryAccentColor,
-            0 0 4px $primaryAccentColor;
+        color: $primaryAccentColor;
+
+        @media(min-width: $large) {
+            color: white;
+            text-shadow:
+                0 2px 4px $primaryAccentColor,
+                0 0 2px $primaryAccentColor,
+                0 0 3px $primaryAccentColor,
+                0 0 4px $primaryAccentColor;
+        }
     }
 }
 
